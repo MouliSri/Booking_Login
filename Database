@@ -1,0 +1,57 @@
+
+
+create database BusReservation;
+
+use BusReservation;
+
+create table bus(
+BusNo int primary key not null,
+BusName varchar(30),
+Ac boolean,
+vacany int);
+
+create table BusBooking(
+BusNo int not null,
+Passanger_name varchar(30),
+travel_date date
+);
+
+create table users(
+userName varchar(30),
+email varchar(30),
+password varchar(30)
+);
+
+drop table users;
+
+insert into users
+values("mouli","mouli@gmail.com","moulisri");
+
+
+select userName,password from users
+where userName="mouli" and password="mouli";
+
+select * from users;
+
+insert into bus
+values(1,"Airbus",1,5),
+(2,"AirIndia",1,20),
+(3,"Essar",1,2),
+(4,"primaTravels",0,25);
+
+
+select * from bus;
+select * from Busbooking;
+
+
+select vacany from bus
+where BusNo=1;
+
+update Bus
+set vacany=vacany-1
+where BusNo=1;
+
+select * from Bus;
+
+select * from BusBooking;
+truncate table BusBooking;
